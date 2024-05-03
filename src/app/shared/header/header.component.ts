@@ -19,11 +19,11 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    const token = this.window.localStorage.getItem('token') as string
-    this.token = JSON.parse(token);
+    this.window = this.document?.defaultView?.window as Window;
+    this.token = JSON.parse(this.window.localStorage.getItem('token') as string);
   }
 
-  logout() {
+  logout(): void {
      this.window.localStorage.clear();
      this.router.navigate(['/login'])
        .then(r=>this.document.location.reload());
