@@ -1,0 +1,76 @@
+<div class="container-fluid">
+
+  <div class="row">
+
+    <div class="col-12 d-flex justify-content-center align-items-center flex-column gap-3">
+
+      <span
+        *ngIf="successMessage"
+        class="text-success fw-bolder fs-3"
+      >
+        {{successMessage}}
+      </span>
+
+      <span
+        *ngIf="errorMessage"
+        class="text-danger fw-bolder fs-3"
+      >
+        {{errorMessage}}
+      </span>
+
+      <form class="w-50" ngForm="messageForm">
+
+        <div class="my-4">
+          <label for="user" class="form-label">Select User</label>
+          <select
+            class="form-select"
+            id="user"
+            [formControl]="messageForm.controls.userId"
+          >
+
+            <option *ngFor="let user of users" [value]="user?._id" >
+              {{user?.first_name}} {{user?.last_name}}
+            </option>
+
+          </select>
+        </div>
+
+        <div class="my-4">
+          <label for="subject" class="form-label">Subject</label>
+          <input
+            class="form-control"
+            type="text"
+            placeholder="Enter Subject"
+            id="subject"
+            [formControl]="messageForm.controls.subject"
+          />
+        </div>
+
+        <div class="my-4">
+          <label for="body" class="form-label">Body</label>
+
+          <textarea
+            id="body"
+            rows="4"
+            class="form-control"
+            placeholder="Enter Body"
+            [formControl]="messageForm.controls.content"
+          ></textarea>
+
+        </div>
+
+        <button
+        type="button"
+        class="btn btn-primary text-dark btn-lg w-100"
+        (click)="send()"
+        >
+          Send Message
+        </button>
+
+      </form>
+
+    </div>
+
+  </div>
+
+</div>

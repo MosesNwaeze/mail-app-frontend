@@ -1,0 +1,86 @@
+
+<div class="container-fluid">
+
+  <div class="row">
+
+    <div class="col-12 d-flex justify-content-center align-items-center h-100 flex-column gap-3">
+      <form class="w-50 mt-5" ngForm="registerForm">
+
+        <h1 class="text-center">Signup Form</h1>
+
+        <div class="mb-3">
+
+
+          <label for="first-name" class="form-label">First Name</label>
+          <input
+            class="form-control"
+            type="text"
+            placeholder="First Name"
+            id="first-name"
+            [formControl]="registerForm.controls.first_name"
+          />
+
+        </div>
+
+        <div class="mb-3">
+
+
+          <label for="last-name" class="form-label">Last Name</label>
+          <input
+            class="form-control"
+            type="text"
+            placeholder="Last Name"
+            id="last-name"
+            [formControl]="registerForm.controls.last_name"
+          />
+
+        </div>
+        <div class="mb-3">
+
+
+          <label for="email" class="form-label">Email</label>
+          <input
+            class="form-control"
+            type="text"
+            placeholder="email"
+            id="email"
+            [formControl]="registerForm.controls.email"
+          />
+
+        </div>
+
+        <div class="mb-3">
+
+
+          <label for="password" class="form-label">Password</label>
+          <input
+            class="form-control"
+            type="password"
+            placeholder="Password"
+            id="password"
+            [formControl]="registerForm.controls.password"
+          />
+
+        </div>
+
+        <div>
+          <button
+            type="button"
+            class="btn btn-outline-primary text-dark w-100"
+            (click)="register()"
+          >
+            Register
+          </button>
+        </div>
+      </form>
+      <p class="mt-1">
+        Old?
+        <a class="btn-link" routerLink="/login">Login</a>
+      </p>
+    </div>
+
+
+
+  </div>
+
+</div>

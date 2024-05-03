@@ -1,0 +1,37 @@
+<div class="container-fluid" style="background-color: white;height: 70vh">
+
+  <div class="row h-100">
+
+    <div class="col-12 d-flex justify-content-center">
+
+      <div
+        class="d-flex justify-content-center align-items-center flex-column gap-5"
+        style="border: #0A58C9 1rem double; width: 50%; background-color: #7CABD0"
+      >
+
+        <div>
+          <h1 class="fw-bolder">Welcome {{user?.first_name}} {{user?.last_name}}</h1>
+        </div>
+
+        <div>
+          <h3 class="fw-bolder text-success">You have {{closedMessages.length}} unread messages  out of {{messages.length}} total</h3>
+        </div>
+
+        <div>
+          <a
+            routerLink="/messages"
+            class="btn  btn-primary btn-lg text-white"
+            role="button"
+            style="padding: 2rem; width: 20rem"
+          >
+            View Messages
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+
+</div>

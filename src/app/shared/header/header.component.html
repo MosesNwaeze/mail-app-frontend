@@ -1,0 +1,49 @@
+<div
+  class="container-fluid"
+  style="height: 5rem; padding: 24px;border-bottom:#7CABD0 solid 2px; margin-bottom: 2rem "
+  *ngIf="token"
+>
+
+ <div class="row w-100">
+
+
+   <div class="d-flex justify-content-between align-items-center col-12">
+
+     <div>
+       <a routerLink="/" style="text-decoration: none">
+         LOGO
+       </a>
+
+     </div>
+
+     <div class="d-flex gap-5">
+
+       <ul
+         style="list-style: none"
+       >
+         <li
+           style=""
+         >
+           <a
+             routerLink="/send-message"
+             class="text-decoration-none"
+           >
+             Send Message
+           </a>
+         </li>
+       </ul>
+
+       <button
+         type="button"
+         class="btn btn-primary text-white"
+         (click)="logout()"
+       >
+         Logout
+       </button>
+     </div>
+
+   </div>
+
+ </div>
+
+</div>

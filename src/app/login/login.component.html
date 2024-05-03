@@ -1,0 +1,56 @@
+<div class="container-fluid">
+
+  <div class="row">
+
+    <div class="col-12 d-flex justify-content-center align-items-center h-100 flex-column">
+      <form class="w-50 mt-5" ngForm="loginForm">
+
+        <h1 class="text-center">Login Form</h1>
+        <div class="mb-3">
+
+
+          <label class="form-label" for="email">Email</label>
+          <input
+            [formControl]="loginForm.controls.email"
+            class="form-control"
+            id="email"
+            placeholder="email"
+            type="text"
+          />
+
+        </div>
+
+        <div class="mb-3">
+
+
+          <label class="form-label" for="password">Password</label>
+          <input
+            [formControl]="loginForm.controls.password"
+            class="form-control"
+            id="password"
+            placeholder="Password"
+            type="password"
+          />
+
+        </div>
+
+        <div>
+          <button
+            (click)="login()"
+            class="btn btn-outline-primary text-dark w-100"
+            type="button"
+          >
+            Login
+          </button>
+        </div>
+      </form>
+      <p class="mt-3">
+        New?
+        <a class="btn-link" routerLink="/register">Register</a>
+      </p>
+    </div>
+
+
+  </div>
+
+</div>

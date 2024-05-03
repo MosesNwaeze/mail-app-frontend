@@ -1,0 +1,72 @@
+<div class="container-fluid" style="background-color: #7CABD0; padding: 2rem 0; overflow-x: hidden">
+
+  <div class="row">
+
+    <div class="col-12 p-4" style="height: 100vh">
+
+      <h1 class="text-center my-5" style="color: #000000; font-weight: 500;font-size: 40px">Messages</h1>
+
+      <div class="d-flex  gap-5 flex-wrap justify-content-center">
+
+        <div *ngFor="let message of messages; let i = index">
+
+          <div
+            (click)="showDetails(message)"
+            *ngIf="!message?.is_read"
+           style="
+           border: green 2px solid; margin: 0.5rem 0; padding: 1rem;
+           background-color: green;
+           color: white;
+           width: 20rem;
+           border-radius: 10px;
+           height: 10rem;
+           text-align: left;
+           cursor: pointer;
+">
+            <div class="d-flex justify-content-between">
+              <h3 style="font-weight: bolder; color: black">{{ message?.subject }}</h3>
+              <h6 style="color: #FFD700; font-weight: bold;font-style: italic;">
+                <i aria-hidden="true" class="fa fa-envelope"></i>
+              </h6>
+            </div>
+            <p>{{ message?.content.substring(0, 20) }}...</p>
+          </div>
+
+          <div
+            (click)="showDetails(message)"
+            *ngIf="message?.is_read"
+               style="
+                border: gray 2px solid; margin: 0.5rem 0; padding: 1rem; background-color: gray;
+                color: white;
+                width: 20rem;
+                border-radius: 10px;
+                height: 10rem;
+                text-align: left;
+                cursor: pointer;
+">
+            <div class="d-flex justify-content-between">
+              <h3 style="font-weight: bolder; color: black">{{ message?.subject }}</h3>
+              <h6 style="color: #FFD700; font-style: italic;font-weight: bold">
+                <i aria-hidden="true" class="fa fa-envelope-open"></i>
+              </h6>
+            </div>
+
+            <p>{{ message?.content }}</p>
+          </div>
+
+
+        </div>
+
+
+      </div>
+
+
+    </div>
+
+    <div>
+
+    </div>
+
+  </div>
+
+</div>
