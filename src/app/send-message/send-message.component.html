@@ -21,6 +21,17 @@
       <form class="w-50" ngForm="messageForm">
 
         <div class="my-4">
+          <label for="from" class="form-label">From</label>
+          <input
+            class="form-control"
+            type="text"
+            id="from"
+            [value]="user?.email"
+            disabled="disabled"
+          />
+        </div>
+
+        <div class="my-4">
           <label for="user" class="form-label">Select User</label>
           <select
             class="form-select"

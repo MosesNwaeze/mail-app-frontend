@@ -13,6 +13,8 @@ export class SendMessageComponent implements OnInit {
   errorMessage!: string;
   users!: any[];
 
+  user!: any
+
   window!: Window
 
   messageForm = new FormGroup({
@@ -30,6 +32,22 @@ export class SendMessageComponent implements OnInit {
   ngOnInit(): void {
     this.window = this.document?.defaultView?.window as Window;
     this.fetchUsers();
+
+    this.loginUser();
+  }
+
+  loginUser(): void {
+    const userId = JSON.parse(this.window.localStorage.getItem('userId') as string);
+    const subURL = `api/user/${userId}`;
+    this.httpClient.getUsers(subURL)
+      .subscribe({
+        next: value => {
+          this.user = value.data
+        },
+        error: err => {
+          console.log('Error fetching user<>',err);
+        }
+      })
   }
 
 
