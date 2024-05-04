@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiURL: 'https://mbl-hightech-assessment-backend.netlify.app/',
+  apiURL: 'https://mail-app-backend-gkbc.onrender.com',
 };
